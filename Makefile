@@ -480,3 +480,36 @@ pytest:
 .PHONY: format-and-pytest
 format-and-pytest:
 	RUNTIME=docker ./util/docker_cmd.sh bash -lic "$(CONTAINER_PREAMBLE); qmk format-c --core-only -a && qmk format-python -a && qmk pytest"
+
+
+# ------------------------------- lily58 druotoni
+
+druotoni_keymap_path := ./keyboards/lily58/keymaps/druotoni
+
+.PHONY: json2c
+json2c:
+	qmk json2c $(druotoni_keymap_path)/lily58_rev1.json > $(druotoni_keymap_path)/keymap.c
+
+.PHONY: build_left
+build_left:
+	sed -i -e 's/IS_RIGHT/IS_LEFT/g' $(druotoni_keymap_path)/config.h
+	qmk compile -kb lily58 -km druotoni
+
+.PHONY: build_right
+build_right:
+	sed -i -e 's/IS_LEFT/IS_RIGHT/g' $(druotoni_keymap_path)/config.h
+	qmk compile -kb lily58 -km druotoni
+
+.PHONY: flash_left
+flash_left: build_left json2c
+	echo 'Присоединить ЛЕВУЮ половинку и нажать RESET'
+	qmk flash -kb lily58 -km druotoni
+
+.PHONY: flash_right
+flash_right: build_right  json2c
+	echo 'Присоединить ПРАВУЮ половинку и нажать RESET'
+	qmk flash -kb lily58 -km druotoni
+
+.PHONY:
+flash_both: flash_right flash_left
+

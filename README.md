@@ -1,35 +1,41 @@
-# Слои
+# Описание
 
-![](keyboards/lily58/keymaps/druotoni/images/0.png)
-
-![](keyboards/lily58/keymaps/druotoni/images/1.png)
-
-![](keyboards/lily58/keymaps/druotoni/images/2.png)
-
-![](keyboards/lily58/keymaps/druotoni/images/3.png)
-
-![](keyboards/lily58/keymaps/druotoni/images/4.png)
-
-# Сборка vial для Lily58
+Раскладка druotoni для lily58
 
 ## Подготовка
 
 ```bash
-git clone --recurse-submodules -j8 https://github.com/vial-kb/vial-qmk
-cd vial-qmk
+git clone https://github.com/Feelinglight/qmk_firmware.git
+git checkout druotoni
+git submodule update -j 8 --init --recursive
+cd qmk_firmware
+uv venv
+uv pip install qmk
 ```
 
-```bash
-python3 -m venv venv
-python3 -m pip install qmk
-qmk setup
-```
+## Прошивка
 
-```bash
-cd keyboards/lily58/rev1/
-rm -rf keymaps
-git clone git@github.com:Feelinglight/qmk_lily58_keymaps.git keymaps
-```
+- Левая половинка:
+
+  - Подключить type-c к левой половинке
+  - Выполнить
+
+    ```bash
+    uv run make flash_left
+    ```
+
+  - Нажать RESET
+
+- Правая половинка:
+
+  - Подключить type-c к правой половинке
+  - Выполнить
+
+    ```bash
+    uv run make flash_right
+    ```
+
+  - Нажать RESET
 
 ## Изменение раскладки
 
@@ -40,20 +46,15 @@ git clone git@github.com:Feelinglight/qmk_lily58_keymaps.git keymaps
 
 Для генерации c-файла выполнить ``make json2c``
 
+## Слои
 
-## Прошивка
+![](keyboards/lily58/keymaps/druotoni/images/0.png)
 
-Левая половинка:
+![](keyboards/lily58/keymaps/druotoni/images/1.png)
 
-- Подключить type-c к левой половинке
-- Выполнить ``make flash_left``
-- Нажать RESET
+![](keyboards/lily58/keymaps/druotoni/images/2.png)
 
-Правая половинка:
+![](keyboards/lily58/keymaps/druotoni/images/3.png)
 
-- Подключить type-c к правой половинке
-- Выполнить ``make flash_right``
-- Нажать RESET
-
-
+![](keyboards/lily58/keymaps/druotoni/images/4.png)
 

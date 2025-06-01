@@ -13,7 +13,7 @@
 #define HOLD_ON_OTHER_KEY_PRESS
 #define RETRO_TAPPING
 
-#define IS_RIGHT 1
+#define IS_LEFT 1
 
 // more space
 // #define NO_ACTION_MACRO

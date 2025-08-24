@@ -58,3 +58,5 @@ uv pip install qmk
 
 ![](keyboards/lily58/keymaps/druotoni/images/4.png)
 
+![](keyboards/lily58/keymaps/druotoni/images/5.png)
+

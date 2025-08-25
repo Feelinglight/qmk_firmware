@@ -6,9 +6,8 @@
 
 ```bash
 git clone https://github.com/Feelinglight/qmk_firmware.git
-git checkout druotoni
-git submodule update -j 8 --init --recursive
 cd qmk_firmware
+git submodule update -j 8 --init --recursive
 uv venv
 uv pip install qmk
 ```

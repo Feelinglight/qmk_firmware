@@ -1,9 +1,7 @@
 #pragma once
 
-#include "oled_config.h"
-
-#define MASTER_LEFT
-#define OLED_DRIVER_ENABLE
+// #define MASTER_LEFT
+// #define OLED_DRIVER_ENABLE
 
 // tapping toggle for my layers
 #define TAPPING_TOGGLE 2
@@ -36,5 +34,3 @@
 #if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
 #    define NO_PRINT
 #endif
-
-

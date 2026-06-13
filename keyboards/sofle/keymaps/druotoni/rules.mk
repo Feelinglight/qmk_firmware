@@ -21,9 +21,11 @@ GRAVE_ESC_ENABLE = no
 SPACE_CADET_ENABLE = no
 
 # https://docs.qmk.fm/config_options#feature-options
+MOUSEKEY_ENABLE = yes
+ENCODER_MAP_ENABLE = yes
+
 MAGIC_ENABLE = no
 BOOTMAGIC_ENABLE = no
-MOUSEKEY_ENABLE = no
 CONSOLE_ENABLE = no
 COMMAND_ENABLE = no
 NKRO_ENABLE = no

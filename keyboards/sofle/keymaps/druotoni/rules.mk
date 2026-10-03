@@ -34,6 +34,10 @@ LEADER_ENABLE = no
 
 EXTRAKEY_ENABLE = yes
 
+
+RGBLIGHT_ENABLE = no
+RGB_MATRIX_ENABLE = yes
+
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 # Breathing sleep LED during USB suspend
 SLEEP_LED_ENABLE = no

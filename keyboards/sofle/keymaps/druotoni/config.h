@@ -1,4 +1,5 @@
 #pragma once
+#include "lighting/led_config.h"
 
 // #define MASTER_LEFT
 // #define OLED_DRIVER_ENABLE

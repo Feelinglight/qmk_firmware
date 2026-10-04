@@ -37,6 +37,8 @@ EXTRAKEY_ENABLE = yes
 
 RGBLIGHT_ENABLE = no
 RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_CUSTOM_USER = yes
+SRC += lighting/lighting.c
 
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 # Breathing sleep LED during USB suspend
@@ -54,4 +56,3 @@ LTO_ENABLE = yes
 #         ./boot.c \
 #         ./draw_helper.c \
 #         ./oled.c \
-
